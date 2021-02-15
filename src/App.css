@@ -1,38 +1,73 @@
-.App {
-  text-align: center;
-}
+.clock {
+  margin: 2rem auto;
+  width: 22rem;
+  padding: 4rem 2rem;
+  border: 0.5rem solid var(--purple);
+  color: #4527a0;
+  border-radius: 0.5rem;
+  font-size: 4.5rem;
+  font-weight: 200;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  position: relative;
+}
+
+.clock:before {
+  content: "";
+  width: 4rem;
+  height: 0.5rem;
+  background: var(--purple);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: rotate(-45deg) translateY(2.9rem);
+}
+
+.clock:after {
+  content: "";
+  width: 4rem;
+  height: 0.5rem;
+  background: var(--purple);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: rotate(45deg) translateY(2.9rem);
+}
+
+.hrs,
+.mins {
+  position: relative;
+  /*   margin-right: 1rem; */
+}
+
+.hrs:after,
+.mins:after {
+  content: ":";
+  margin: 0 0.25rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 150px;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+
+.buttons > button {
+  outline: none;
+  background: var(--purple);
   color: white;
+  border: none;
+  padding: 7px 13px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.buttons > button:hover {
+  background: rgb(150, 85, 197);
 }
